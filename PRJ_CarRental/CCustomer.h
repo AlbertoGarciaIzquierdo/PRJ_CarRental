@@ -22,7 +22,7 @@ public:
 
 	inline float getInvoice() { return m_invoice; }
 
-	void AddInvoice(CCar& rented, int& days);
+	void AddInvoice(CCar& rented);
 	void AddTax(CCar& rented, int& days);
 	void AddPoints(CCar& rented);
 

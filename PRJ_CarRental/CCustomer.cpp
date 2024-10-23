@@ -28,7 +28,7 @@ void CCustomer::addRentedCar(CCar rented, int days)
 	if (it != m_rentedCar.end())
 	{
 		it->setRentedDays(days);
-		AddInvoice(*it, days);
+		AddInvoice(*it);
 	}
 	else
 	{
@@ -57,32 +57,17 @@ void CCustomer::removeRentedCar(CCar rented, int days)
 	}
 }
 
-void CCustomer::AddInvoice(CCar& rented, int& days)
+void CCustomer::AddInvoice(CCar& rented)
 {
 	switch (rented.getCarType())
 	{
 	case CarTypes::Type::Premium:
 	{
-		
-		if (days > rented.getRentedDays())
-		{
-			int extraDays = days - rented.getRentedDays();
-			m_invoice += extraDays * (rented.getCarPrice() + (rented.getCarPrice() * 0.2f));
-			break;
-		}
-
 		m_invoice += rented.getRentedDays() * rented.getCarPrice();
 		break;
 	}
 	case CarTypes::Type::SUV:
 	{
-		if (days > rented.getRentedDays())
-		{
-			int extraDays = days - rented.getRentedDays();
-			m_invoice += extraDays * (rented.getCarPrice() + (rented.getCarPrice() * 0.6f));
-			break;
-		}
-
 		if (rented.getRentedDays() > 30)
 		{
 			m_invoice += rented.getRentedDays() * (rented.getCarPrice() * 0.5f);
@@ -100,13 +85,6 @@ void CCustomer::AddInvoice(CCar& rented, int& days)
 	}
 	case CarTypes::Type::Small:
 	{
-		if (days > rented.getRentedDays())
-		{
-			int extraDays = days - rented.getRentedDays();
-			m_invoice += extraDays * (rented.getCarPrice() + (rented.getCarPrice() * 0.3f));
-			break;
-		}
-
 		if (rented.getRentedDays() > 7)
 		{
 			m_invoice += rented.getRentedDays() * (rented.getCarPrice() * 0.6f);
