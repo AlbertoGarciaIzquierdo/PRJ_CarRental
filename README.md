@@ -50,3 +50,17 @@ We can also rent more than 1 car each user and the quantity and the points keeps
 ![image](https://github.com/user-attachments/assets/27c1b73f-d94d-4ae5-8423-8f5a6c61e656)
 
 As we see in the picture Victor has rent a Seat Ibiza and a BMNW 7.
+
+<h2>With the process open we could do curl call to rent or return</h2>
+curl "http://localhost:8080/CarRenting/Rent?plate-id=MATRICULA&user-name=UserName&days-rented=NumberOfDays"
+curl "http://localhost:8080/CarRenting/Return?plate-id=MATRICULA&user-name=UserName&days-rented=NumberOfDays"
+
+EXAMPLE:
+C:\Users\alber>curl "http://localhost:8080/CarRenting/Rent?plate-id=LPN001&user-name=Alberto&days-rented=5"
+Alberto has rented vehicle (LPN001)
+C:\Users\alber>curl "http://localhost:8080/CarRenting/Rent?plate-id=LPN002&user-name=Alberto&days-rented=20"
+Alberto has rented vehicle (LPN002)
+C:\Users\alber>curl "http://localhost:8080/CarRenting/Return?plate-id=LPN001&user-name=Alberto&days-rented=5"
+Alberto has returned vehicle (LPN001)
+
+![image](https://github.com/user-attachments/assets/b137b7af-5788-4e28-a858-f5a5aae7e436)
