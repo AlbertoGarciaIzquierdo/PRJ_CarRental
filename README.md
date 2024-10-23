@@ -52,8 +52,8 @@ We can also rent more than 1 car each user and the quantity and the points keeps
 As we see in the picture Victor has rent a Seat Ibiza and a BMNW 7.
 
 <h2>With the process open we could do curl call to rent or return</h2>
-<code>curl "http://localhost:8080/CarRenting/Rent?plate-id=MATRICULA&user-name=UserName&days-rented=NumberOfDays"</code>
-<code>curl "http://localhost:8080/CarRenting/Return?plate-id=MATRICULA&user-name=UserName&days-rented=NumberOfDays"</code>
+<code>curl "http://localhost:8080/CarRenting/Rent?plate-id=MATRICULA&user-name=UserName&days-rented=NumberOfDays"
+curl "http://localhost:8080/CarRenting/Return?plate-id=MATRICULA&user-name=UserName&days-rented=NumberOfDays"</code>
 
 EXAMPLE:
 ![image](https://github.com/user-attachments/assets/01b0db99-a2a4-427f-a708-610a909ec253)
