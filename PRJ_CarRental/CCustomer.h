@@ -17,12 +17,13 @@ public:
 	inline void AddCustomerPoints(int quantity) { m_Points++; }
 
 	inline std::vector<CCar>& getRentedCar() { return m_rentedCar; }
-	void addRentedCar(CCar rented, int days);
-	void removeRentedCar(CCar rented, int days);
+	void addRentedCar(CCar rented, int days = 0);
+	void removeRentedCar(CCar rented, int days = 0);
 
 	inline float getInvoice() { return m_invoice; }
 
 	void AddInvoice(CCar& rented, int& days);
+	void AddTax(CCar& rented, int& days);
 	void AddPoints(CCar& rented);
 
 	CCar* getCar(int Index);

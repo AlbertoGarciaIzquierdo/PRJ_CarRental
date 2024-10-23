@@ -46,7 +46,9 @@ void CCustomer::removeRentedCar(CCar rented, int days)
 
 	if (it != m_rentedCar.end())
 	{
-		AddInvoice(*it, days);
+		int extraDays = days - it->getRentedDays();
+		if (extraDays > 0)
+			AddTax(*it, days);
 		m_rentedCar.erase(it);
 	}
 	else
@@ -112,6 +114,33 @@ void CCustomer::AddInvoice(CCar& rented, int& days)
 		}
 
 		m_invoice += rented.getRentedDays() * (rented.getCarPrice());
+		break;
+	}
+	default:
+		break;
+	}
+}
+
+void CCustomer::AddTax(CCar& rented, int& days)
+{
+	switch (rented.getCarType())
+	{
+	case CarTypes::Type::Premium:
+	{
+		m_invoice += days * (rented.getCarPrice() + (rented.getCarPrice() * 0.2f));
+
+		break;
+	}
+	case CarTypes::Type::SUV:
+	{
+		m_invoice += days * (rented.getCarPrice() + (rented.getCarPrice() * 0.6f));
+
+		break;
+	}
+	case CarTypes::Type::Small:
+	{
+		m_invoice += days * (rented.getCarPrice() + (rented.getCarPrice() * 0.3f));
+
 		break;
 	}
 	default:

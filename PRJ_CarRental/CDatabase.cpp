@@ -4,7 +4,6 @@
 
 CDatabase::CDatabase()
 {
-	// Meto en la DB algunos customers y algunos vehiculos
 	// Customers
 	vCustomers.push_back(CCustomer("Alberto"));
 	vCustomers.push_back(CCustomer("Kevin"));
