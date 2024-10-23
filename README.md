@@ -30,17 +30,23 @@ CARS:
 
 After selecting one index we will get the selection of 3 modes: Renting, Returning and Change User.
 
-#RENTING:#
+# RENTING: #
 We have selected Ana as user, and we rent a Kia Sorento for 4 days.
 ![image](https://github.com/user-attachments/assets/796d7e32-14f8-4da1-a2d5-92b871236d07)
 
 As we see ana now have to pay 600 for those 4 days.
 ![image](https://github.com/user-attachments/assets/101e6153-5615-4ed5-912b-c454a49e0fcf)
 
-#RETURNING:#
+# RETURNING: #
 Now we will return the car, but used for more than 4 days, in this case will be for 5 days.
 The invoice amount should change to 600 + (150 + (150 * 0.6)) = 840
 ![image](https://github.com/user-attachments/assets/44bf326c-8d14-435a-a1a2-1923bd9480f9)
 
+# CHANGE USER: #
+As we see now Ana has 3 points and have to pay 840 but other users keep same.
+![image](https://github.com/user-attachments/assets/f3141cac-10f4-4caa-9dd9-7f96daec63f5)
 
+We can also rent more than 1 car each user and the quantity and the points keeps raising.
+![image](https://github.com/user-attachments/assets/27c1b73f-d94d-4ae5-8423-8f5a6c61e656)
 
+As we see in the picture Victor has rent a Seat Ibiza and a BMNW 7.
